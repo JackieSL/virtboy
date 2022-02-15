@@ -9,6 +9,13 @@
 class Bus
 {
 public:
+	Bus()
+	{
+
+	}
+
+	~Bus() {}
+
 	void Write(u16 addr, u8 val);
 	u8 Read(u16 addr);
 

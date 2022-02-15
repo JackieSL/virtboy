@@ -140,6 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bitops.cpp" />
+    <ClCompile Include="Bus.cpp" />
+    <ClCompile Include="Cartridge.cpp" />
+    <ClCompile Include="Clock.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="Processor.cpp" />
@@ -147,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitops.hpp" />
+    <ClInclude Include="Bus.h" />
+    <ClInclude Include="Cartridge.h" />
+    <ClInclude Include="Clock.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="Tests.h" />

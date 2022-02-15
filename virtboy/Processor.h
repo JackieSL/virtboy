@@ -20,7 +20,7 @@ private:
 	u16 DE; //u16 Register or u8 D & u8 E
 	u16 HL; // ^ same as above
 
-	Bus* bus;
+	//Bus* bus;
 
 	u16 opcode;
 public:

@@ -1,32 +1,6 @@
 #include "../usfl_lib/uslf_lib.hpp"
 #include "Tests.h"
-
-
-
-
-class VirtBoy
-{
-public:
-	bool State;
-
-	VirtBoy()
-	{
-		State = false;
-	}
-
-	void Init() 
-	{
-
-	}
-
-	void Step()
-	{
-
-	}
-};
-
-
-
+#include "Cartridge.h"
 
 
 
@@ -41,4 +15,7 @@ int main(int argc, char* argv[])
 		T.Run();
 		counter++;
 	}
+
+	Cartridge c;
+	c.LoadROM();
 }
