@@ -23,6 +23,57 @@ void TestHELLO(bool& R, int& argc, std::string* data)
 	AddEntry("World", argc, data);
 }
 
+void TestBitops(bool& R, int& argc, std::string* data)
+{
+	using namespace Bitops;
+	if (Make16(0xa2, 0xb2) == 0xa2b2)
+	{
+		AddEntry("Make16... OK", argc, data);
+		R = true;
+	}
+	else
+	{
+		AddEntry("Make16... Failed", argc, data);
+		R = false;
+	}
+
+	if (GetHighByte(0xA2B2) == 0xA2)
+	{
+		AddEntry("Get High Byte... OK", argc, data);
+		R = true;
+	}
+	else
+	{
+		AddEntry("Get High Byte... Failed", argc, data);
+		R = false;
+	}
+
+	if (GetLowByte(0xA2B2) == 0xB2)
+	{
+		AddEntry("Get Low Byte... OK", argc, data);
+		R = true;
+	}
+	else
+	{
+		AddEntry("Get Low Byte... Failed", argc, data);
+		R = false;
+	}
+
+	u16 dummy = 0;
+	//SetHighByte(dummy, 0xA2);
+	SetLowByte(dummy, 0xB2);
+	if (dummy == 0xB2 )
+	{
+		AddEntry("Set Hi/Lo Byte... OK", argc, data);
+		R = true;
+	}
+	else
+	{
+		AddEntry("Set Hi/Lo Byte... Failed", argc, data);
+		R = false;
+	}
+}
+
 void TestEndianness(bool& R, int& argc, std::string* data)
 {
 	Memory mem;

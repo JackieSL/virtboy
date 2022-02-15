@@ -10,6 +10,10 @@
     <ClCompile Include="Tests.cpp">
       <Filter>Testing</Filter>
     </ClCompile>
+    <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="Bitops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Memory.h">
@@ -17,6 +21,10 @@
     </ClInclude>
     <ClInclude Include="Tests.h">
       <Filter>Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h" />
+    <ClInclude Include="Bitops.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
