@@ -18,12 +18,15 @@ u8 Bitops::GetHighByte(u16 value)
 
 void Bitops::SetHighByte(u16& val, u8 nVal)
 {
-
 	val = (nVal << 8) | (val & 0xFF00);
 }
 
 u16 Bitops::Make16(u8 hi, u8 lo)
 {
-	u16 res = (hi << 8) | lo;
-	return res;
+	return (hi << 8) | lo;
+}
+
+bool Bitops::CheckBit(u8 val, u32 pos)
+{
+	return ((val) & (1 << ((u8)pos - 1)));
 }

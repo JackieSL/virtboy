@@ -12,6 +12,8 @@ namespace Bitops
 	void SetHighByte(u16& val, u8 nVal);
 
 	u16 Make16(u8 hi, u8 lo);
+
+	bool CheckBit(u8 val, u32 pos);
 };
 
 

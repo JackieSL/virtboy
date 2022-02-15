@@ -25,11 +25,12 @@ void TestHELLO(bool& R, int& argc, std::string* data)
 
 void TestBitops(bool& R, int& argc, std::string* data)
 {
+	R = true;
 	using namespace Bitops;
 	if (Make16(0xa2, 0xb2) == 0xa2b2)
 	{
 		AddEntry("Make16... OK", argc, data);
-		R = true;
+
 	}
 	else
 	{
@@ -40,7 +41,7 @@ void TestBitops(bool& R, int& argc, std::string* data)
 	if (GetHighByte(0xA2B2) == 0xA2)
 	{
 		AddEntry("Get High Byte... OK", argc, data);
-		R = true;
+
 	}
 	else
 	{
@@ -51,7 +52,7 @@ void TestBitops(bool& R, int& argc, std::string* data)
 	if (GetLowByte(0xA2B2) == 0xB2)
 	{
 		AddEntry("Get Low Byte... OK", argc, data);
-		R = true;
+
 	}
 	else
 	{
@@ -65,11 +66,22 @@ void TestBitops(bool& R, int& argc, std::string* data)
 	if (dummy == 0xB2 )
 	{
 		AddEntry("Set Hi/Lo Byte... OK", argc, data);
-		R = true;
+
 	}
 	else
 	{
 		AddEntry("Set Hi/Lo Byte... Failed", argc, data);
+		R = false;
+	}
+
+	if (CheckBit(0b00000100, 3))
+	{
+		AddEntry("CheckBit... OK", argc, data);
+
+	}
+	else
+	{
+		AddEntry("CheckBit... Failed", argc, data);
 		R = false;
 	}
 }
