@@ -4,6 +4,3 @@
 [submodule "usfl_lib"]
 	path = usfl_lib
 	url = https://www.github.com/JackieSL/usfl_lib.git
-[submodule "gameboy-test-roms"]
-	path = gameboy-test-roms
-	url = https://github.com/c-sp/gameboy-test-roms.git
