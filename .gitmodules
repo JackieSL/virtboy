@@ -1,0 +1,6 @@
+[submodule "testotron"]
+	path = testotron
+	url = https://github.com/JackieSL/testotron.git
+[submodule "usfl_lib"]
+	path = usfl_lib
+	url = https://github.com/JackieSL/usfl_lib.git
