@@ -12,19 +12,17 @@ void TestWritingU16DataAsLE(bool& R, int& argc, std::string* data)
 	else
 	{
 		R = false;
-		data[argc] = "Failed to read data correctly";
-		argc += 1;
+		AddEntry("Failed to read data correctly", argc, data);
+		
 	}
 }
 void TestHELLO(bool& R, int& argc, std::string* data)
 {
 	R = false;
-	data[argc] = "HELLO";
-	argc += 1;
-	data[argc] = "WORLD!";
-	argc += 1;
-
+	AddEntry("Hello", argc, data);
+	AddEntry("World", argc, data);
 }
+
 void TestEndianness(bool& R, int& argc, std::string* data)
 {
 	Memory mem;
@@ -37,14 +35,12 @@ void TestEndianness(bool& R, int& argc, std::string* data)
 	}
 	else if (r == 0xA1B2)
 	{
-		data[argc] = "Endianess is wrong!";
-		argc += 1;
+		AddEntry("Endianess is wrong!", argc, data);
 		R = false;
 	}
 	else
 	{
-		data[argc] = "Encountered an unexpected value!";
-		argc += 1;
+		AddEntry("Endianess is wrong!", argc, data);
 		R = false;
 	}
 }

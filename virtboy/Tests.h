@@ -5,6 +5,11 @@
 #include "Memory.h"
 
 static std::vector<Test> Tests;
+static void AddEntry(std::string message, int& argc, std::string* data)
+{
+	data[argc] = message;
+	argc += 1;
+}
 
 void TestEndianness(bool& R, int& argc, std::string* data);
 void TestWritingU16DataAsLE(bool& R, int& argc, std::string* data);
