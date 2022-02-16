@@ -156,6 +156,7 @@
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="Tests.h" />
+    <ClInclude Include="virtboy_static_data.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

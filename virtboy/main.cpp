@@ -3,7 +3,6 @@
 #include "Cartridge.h"
 
 
-
 int main(int argc, char* argv[])
 {
 	InitTestSuite();
@@ -16,6 +15,4 @@ int main(int argc, char* argv[])
 		counter++;
 	}
 
-	Cartridge c;
-	c.LoadROM();
 }

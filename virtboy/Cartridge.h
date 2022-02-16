@@ -1,27 +1,41 @@
 #pragma once
 #include "../usfl_lib/uslf_lib.hpp"
+#include "virtboy_static_data.hpp"
 
-#define ROM_FOLDER "../gameboy-test-roms-v3.2"
-#define ROM_FILE "C:\\Users\\stavros\\source\\repos\\virtboy\\gameboy-test-roms-v3.2\\dmg-acid2\\dmg-acid2.gb"
-struct Cartridge
+struct CartridgeHeader
 {
-	u8* raw_bytes;
+	u8 entry[4];
+	u8 logo[48];
+	u8 title[16];
+	u16 n_licensee_code;
+	u8 sgb_flag;
+	u8 cartridge_type;
+	u8 rom_size;
+	u8 ram_size;
+	u8 dest_code;
+	u8 old_licensee_code;
+	u8 mask_rom_version;
+	u8 checksum_header;
+	u16 checksum_global;
+};
 
-	void LoadROM()
-	{
-		std::string path = ROM_FILE;
-
-		std::ifstream rom(path, std::ios::binary);
-
-		assert(!rom);
-
-		rom.seekg(0, std::ios::end);
-		std::streampos length = rom.tellg();
-		rom.seekg(0, std::ios::beg);
-		raw_bytes = new u8[length];
+class Cartridge
+{
+private:
+	u8* rom_data;
+	u32 rom_size;
 
 
-		rom.read((char*) & raw_bytes[0], length);
-	}
+public:
+	Cartridge();
+	Cartridge(std::string path);
+	~Cartridge();
+
+	void Load(std::string path);
+
+	u8 Read(u16 addr);
+	void Write(u16 addr, u8 val);
+
+	CartridgeHeader GetHeader();
 };
 
