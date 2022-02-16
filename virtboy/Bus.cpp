@@ -7,6 +7,7 @@ Bus::Bus() : Device("Undefined", 0, 0xFFFF)
 
 Bus::~Bus()
 {
+
 }
 
 void Bus::Write(u16 addr, u8 val)
@@ -99,4 +100,30 @@ void Bus::AttachDevice(Device* device)
         assert("Failed to add device", device != nullptr);
     }
     this->devices.push_back(device);
+}
+
+std::vector<Device*> Bus::GetDeviceByName(std::string name)
+{
+    std::vector<Device*> list;
+    for (auto d : devices)
+    {
+        if (name.compare(d->GetName()) == 0)
+        {
+            list.push_back(d);
+        }
+    }
+    return list;
+}
+
+std::vector<Device*> Bus::GetDeviceByRange(u16 addr)
+{
+    std::vector<Device*> list;
+    for (auto d : devices)
+    {
+        if (IN_RANGE(addr, d->GetLowBound(), d->GetHighBound()))
+        {
+            list.push_back(d);
+        }
+    }
+    return list;
 }

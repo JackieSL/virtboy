@@ -25,5 +25,10 @@ public:
 	u16 Read16(u16 addr);
 
 	void AttachDevice(Device* device);
+
+	void ListDevices();
+	//This could return multiple devices
+	std::vector<Device*> GetDeviceByName(std::string name);
+	std::vector<Device*> GetDeviceByRange(u16 addr);
 };
 
