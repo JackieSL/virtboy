@@ -1,6 +1,6 @@
 #include "Bus.h"
 
-Bus::Bus() : Device(0, 0xFFFF)
+Bus::Bus() : Device("Undefined", 0, 0xFFFF)
 {
     State = true;
 }
@@ -17,7 +17,6 @@ void Bus::Write(u16 addr, u8 val)
         {
             if (IN_RANGE(addr, d->GetLowBound(), d->GetHighBound()))
             {
-                LOG("Writing " << std::hex << val << " to @0x" << addr << "(" << d->GetName() << ")");
                 d->Write(addr, val);
             }
         }
@@ -34,14 +33,18 @@ u8 Bus::Read(u16 addr)
     u8 val = 0;
     if (!devices.empty())
     {
+        bool found = false;
         for (auto d : devices)
         {
             if (IN_RANGE(addr, d->GetLowBound(), d->GetHighBound()))
             {
+                found = true;
                 val = d->Read(addr);
-                LOG("Reading " << std::hex << val << " to @0x" << addr << "(" << d->GetName() << ")");
+                break;
             }
         }
+        if (!found)
+            LOG("Failed to find device @0x"<<std::hex<< addr);
     }
     else
     {
@@ -58,7 +61,6 @@ void Bus::Write16(u16 addr, u16 val)
         {
             if (IN_RANGE(addr, d->GetLowBound(), d->GetHighBound()))
             {
-                LOG("Writing " << std::hex << val << " to @0x" << addr << "(" << d->GetName() << ")");
                 d->Write16(addr, val);
             }
         }
@@ -72,7 +74,7 @@ void Bus::Write16(u16 addr, u16 val)
 
 u16 Bus::Read16(u16 addr)
 {
-    u16 val;
+    u16 val = 0;
     if (!devices.empty())
     {
         for (auto d : devices)
@@ -80,7 +82,6 @@ u16 Bus::Read16(u16 addr)
             if (IN_RANGE(addr, d->GetLowBound(), d->GetHighBound()))
             {
                 val = d->Read16(addr);
-                LOG("Reading " << std::hex << val << " to @0x" << addr << "(" << d->GetName() << ")");
             }
         }
     }

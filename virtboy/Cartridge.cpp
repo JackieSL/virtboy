@@ -1,6 +1,6 @@
 #include "Cartridge.h"
 
-Cartridge::Cartridge()
+Cartridge::Cartridge() : Device("Cartridge Generic", 0x0, 0x3FFF)
 {
 	rom_data = nullptr;
 	rom_size = 0;
@@ -27,6 +27,11 @@ Cartridge::Cartridge(std::string path)
 	{
 		rom_data[i] = (u8)ss.str()[i];
 	}
+	CartridgeHeader hdr = GetHeader();
+	this->SetName((char*)hdr.title);
+	this->bound_min = 0;
+	this->bound_max = (hdr.rom_size != CartridgeRomSize::ROM_KB32NO_ROM) ? 0x7FFF : 0x3FFF;
+	
 }
 
 Cartridge::~Cartridge()
@@ -63,6 +68,15 @@ u8 Cartridge::Read(u16 addr)
 void Cartridge::Write(u16 addr, u8 val)
 {
 	this->rom_data[addr] = val;
+}
+
+u16 Cartridge::Read16(u16 addr)
+{
+	return u16();
+}
+
+void Cartridge::Write16(u16 addr, u16 val)
+{
 }
 
 CartridgeHeader Cartridge::GetHeader()

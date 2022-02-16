@@ -144,12 +144,14 @@
     <ClCompile Include="Bus.cpp" />
     <ClCompile Include="Cartridge.cpp" />
     <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Sink.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitops.hpp" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Cartridge.h" />
     <ClInclude Include="Device.h" />
+    <ClInclude Include="Sink.h" />
     <ClInclude Include="virtboy_static_data.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

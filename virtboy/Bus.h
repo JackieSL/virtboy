@@ -2,8 +2,7 @@
 
 #include "../usfl_lib/uslf_lib.hpp"
 
-#include "Processor.h"
-#include "Memory.h"
+
 #include "Cartridge.h"
 #include "Device.h"
 

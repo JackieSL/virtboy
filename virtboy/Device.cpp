@@ -1,5 +1,17 @@
 #include "Device.h"
 
+Device::Device()
+{
+    name = "Undefined";
+    bound_min = 0;
+    bound_max = 0;
+}
+
+Device::Device(std::string name, u16 lo, u16 hi)
+    : name(name), bound_min(lo), bound_max(hi)
+{
+}
+
 void Device::SetName(std::string name)
 {
     this->name = name;

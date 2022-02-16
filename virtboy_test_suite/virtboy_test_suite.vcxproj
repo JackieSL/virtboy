@@ -145,9 +145,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InstructionLoadingTest.cpp" />
+    <ClCompile Include="CartridgeLoadingTest.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Tests.cpp" />
+    <ClCompile Include="SinkTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h" />

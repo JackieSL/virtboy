@@ -4,11 +4,12 @@
 
 class Device
 {
-private:
+protected:
 	std::string name;
 	u16 bound_min, bound_max;
 public:
-	Device(u16 lo, u16 hi) : bound_min(lo), bound_max(hi) {}
+	Device();
+	Device(std::string name, u16 lo, u16 hi);
 
 	virtual void Write(u16, u8) = 0;
 	virtual u8 Read(u16 addr) = 0;
@@ -21,6 +22,5 @@ public:
 
 	u16 GetLowBound();
 	u16 GetHighBound();
-
 };
 
