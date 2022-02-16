@@ -1,38 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tests.cpp">
-      <Filter>Testing</Filter>
-    </ClCompile>
-    <ClCompile Include="Processor.cpp" />
     <ClCompile Include="Bitops.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bus.cpp" />
-    <ClCompile Include="Clock.cpp" />
-    <ClCompile Include="Cartridge.cpp" />
+    <ClCompile Include="Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cartridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Memory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tests.h">
-      <Filter>Testing</Filter>
-    </ClInclude>
-    <ClInclude Include="Processor.h" />
     <ClInclude Include="Bitops.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bus.h" />
-    <ClInclude Include="Clock.h" />
-    <ClInclude Include="Cartridge.h" />
     <ClInclude Include="virtboy_static_data.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cartridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -42,9 +37,6 @@
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{e6b04c29-ee33-4b3e-9b44-a206ea3717b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Testing">
-      <UniqueIdentifier>{b2bedffc-3db5-466b-bcf9-7c45995142cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

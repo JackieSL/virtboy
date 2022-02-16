@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{145a5f7b-e303-4719-96be-0e5169b0fdde}</ProjectGuid>
-    <RootNamespace>virtboy</RootNamespace>
+    <ProjectGuid>{efbe3b89-cbb7-46e1-abc2-ca783b6a7f8b}</ProjectGuid>
+    <RootNamespace>virtboytestsuite</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -140,17 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bitops.cpp" />
-    <ClCompile Include="Bus.cpp" />
-    <ClCompile Include="Cartridge.cpp" />
-    <ClCompile Include="Device.cpp" />
+    <ProjectReference Include="..\virtboy\virtboy.vcxproj">
+      <Project>{145a5f7b-e303-4719-96be-0e5169b0fdde}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bitops.hpp" />
-    <ClInclude Include="Bus.h" />
-    <ClInclude Include="Cartridge.h" />
-    <ClInclude Include="Device.h" />
-    <ClInclude Include="virtboy_static_data.hpp" />
+    <ClCompile Include="InstructionLoadingTest.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

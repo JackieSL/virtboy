@@ -1,6 +1,7 @@
 #pragma once
 #include "../usfl_lib/uslf_lib.hpp"
 #include "virtboy_static_data.hpp"
+#include "Device.h"
 
 struct CartridgeHeader
 {
@@ -19,7 +20,7 @@ struct CartridgeHeader
 	u16 checksum_global;
 };
 
-class Cartridge
+class Cartridge : public Device
 {
 private:
 	u8* rom_data;
@@ -35,6 +36,9 @@ public:
 
 	u8 Read(u16 addr);
 	void Write(u16 addr, u8 val);
+
+	u16 Read16(u16 addr);
+	void Write16(u16 addr, u16 val);
 
 	CartridgeHeader GetHeader();
 };
